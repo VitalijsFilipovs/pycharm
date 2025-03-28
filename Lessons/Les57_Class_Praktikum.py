@@ -99,7 +99,7 @@ person6 = Person('Mira', date(1999, 7, 20))
 person7 = Person('John', date(1982, 3, 30))
 person8 = Person('Ahmed', date(2000, 11, 11))
 person9 = Person('Lana', date(1995, 2, 28))
-person10 = Person('Mark', date(1980, 9, 9))
+person10 = Person('Mark', date(1980, 9, 10))
 
 # Список всех персоны
 person_list = [person1, person2, person3, person4, person5, person6, person7, person8, person9, person10]
