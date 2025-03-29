@@ -60,70 +60,70 @@ from datetime import date
 # 6. Используя функцию forAll() убедиться, что все сотрудники действительно
 # старше 18 лет.
 
-from datetime import date, datetime
-
-
-class Person:
-    def __init__(self, first_name, birthday):
-        self.first_name = first_name
-        self.birthday = birthday  # Дата рождения в формате date
-
-    def __str__(self):
-        return f'{self.first_name}, День рождения: {self.birthday}'
-
-        # Метод для вычисления возраста
-
-    def get_age(self):
-        today = date.today()
-        age = today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
-        return age
-
-
-class Employee:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-
-    def __str__(self):
-        return f'Сотрудник: {self.name}, Возраст: {self.age}'
-
-    # Создание 10 объектов класса Person
-
-
-person1 = Person('Victor', date(1968, 8, 8))
-person2 = Person('Alica', date(1985, 5, 15))
-person3 = Person('Goga', date(2003, 10, 1))
-person4 = Person('Tom', date(1990, 12, 25))
-person5 = Person('Sara', date(1975, 4, 12))
-person6 = Person('Mira', date(1999, 7, 20))
-person7 = Person('John', date(1982, 3, 30))
-person8 = Person('Ahmed', date(2000, 11, 11))
-person9 = Person('Lana', date(1995, 2, 28))
-person10 = Person('Mark', date(1980, 9, 10))
-
-# Список всех персоны
-person_list = [person1, person2, person3, person4, person5, person6, person7, person8, person9, person10]
-
-
-# Функция для создания списка объектов Employee из объектов Person
-def create_employees(persons):
-    return list(
-        filter(lambda emp: emp.age > 18,
-               map(lambda p: Employee(p.first_name, p.get_age()), persons))
-    )
-
-
-# Создание списка сотрудников
-employee_list = create_employees(person_list)
-
-# Вывод сотрудников на экран
-for employee in employee_list:
-    print(employee)
-
-
-# Убедитесь, что все сотрудники старше 18 лет
-def for_all(employees):
-    return all(employee.age > 18 for employee in employees)
-
-
-print("Все сотрудники старше 18 лет:", for_all(employee_list))
+# from datetime import date, datetime
+#
+#
+# class Person:
+#     def __init__(self, first_name, birthday):
+#         self.first_name = first_name
+#         self.birthday = birthday  # Дата рождения в формате date
+#
+#     def __str__(self):
+#         return f'{self.first_name}, День рождения: {self.birthday}'
+#
+#         # Метод для вычисления возраста
+#
+#     def get_age(self):
+#         today = date.today()
+#         age = today.year - self.birthday.year - ((today.month, today.day) < (self.birthday.month, self.birthday.day))
+#         return age
+#
+#
+# class Employee:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     def __str__(self):
+#         return f'Сотрудник: {self.name}, Возраст: {self.age}'
+#
+#     # Создание 10 объектов класса Person
+#
+#
+# person1 = Person('Victor', date(1968, 8, 8))
+# person2 = Person('Alica', date(1985, 5, 15))
+# person3 = Person('Goga', date(2003, 10, 1))
+# person4 = Person('Tom', date(1990, 12, 25))
+# person5 = Person('Sara', date(1975, 4, 12))
+# person6 = Person('Mira', date(1999, 7, 20))
+# person7 = Person('John', date(1982, 3, 30))
+# person8 = Person('Ahmed', date(2000, 11, 11))
+# person9 = Person('Lana', date(1995, 2, 28))
+# person10 = Person('Mark', date(1980, 9, 10))
+#
+# # Список всех персоны
+# person_list = [person1, person2, person3, person4, person5, person6, person7, person8, person9, person10]
+#
+#
+# # Функция для создания списка объектов Employee из объектов Person
+# def create_employees(persons):
+#     return list(
+#         filter(lambda emp: emp.age > 18,
+#                map(lambda p: Employee(p.first_name, p.get_age()), persons))
+#     )
+#
+#
+# # Создание списка сотрудников
+# employee_list = create_employees(person_list)
+#
+# # Вывод сотрудников на экран
+# for employee in employee_list:
+#     print(employee)
+#
+#
+# # Убедитесь, что все сотрудники старше 18 лет
+# def for_all(employees):
+#     return all(employee.age > 18 for employee in employees)
+#
+#
+# print("Все сотрудники старше 18 лет:", for_all(employee_list))
